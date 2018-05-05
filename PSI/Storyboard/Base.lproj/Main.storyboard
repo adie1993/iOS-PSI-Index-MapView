@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OuT-cu-umN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Delegate-->
+        <scene sceneID="LQ7-of-45d">
+            <objects>
+                <viewController storyboardIdentifier="mapViewController" id="OuT-cu-umN" customClass="PSIMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rNB-1t-jn5"/>
+                        <viewControllerLayoutGuide type="bottom" id="uWb-tR-XDT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ajM-Wk-JjC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Bg-EW-she" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="421"/>
+                                <connections>
+                                    <outlet property="delegate" destination="OuT-cu-umN" id="wIc-ba-2Io"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wfc-zz-Pum">
+                                <rect key="frame" x="0.0" y="421" width="375" height="46.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhQ-5b-EPE">
+                                        <rect key="frame" x="20" y="14.5" width="101" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRX-45-QAV">
+                                        <rect key="frame" x="333" y="11.5" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="uRX-45-QAV" secondAttribute="height" multiplier="1:1" id="sKF-4V-lfA"/>
+                                        </constraints>
+                                        <state key="normal" image="ic-show"/>
+                                        <connections>
+                                            <action selector="btnShow:" destination="OuT-cu-umN" eventType="touchUpInside" id="vYD-a0-BDd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.067610375583171844" green="0.2009250819683075" blue="0.33130884170532227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QhQ-5b-EPE" secondAttribute="trailing" constant="20" symbolic="YES" id="3mj-oQ-Kvy"/>
+                                    <constraint firstItem="QhQ-5b-EPE" firstAttribute="leading" secondItem="Wfc-zz-Pum" secondAttribute="leading" constant="20" id="MnM-gt-jqH"/>
+                                    <constraint firstItem="QhQ-5b-EPE" firstAttribute="centerY" secondItem="Wfc-zz-Pum" secondAttribute="centerY" id="eIh-vS-xC3"/>
+                                    <constraint firstAttribute="trailing" secondItem="uRX-45-QAV" secondAttribute="trailing" constant="20" id="ilb-ds-sKq"/>
+                                    <constraint firstItem="uRX-45-QAV" firstAttribute="centerY" secondItem="Wfc-zz-Pum" secondAttribute="centerY" id="mbJ-mX-JEQ"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aAb-cP-N57">
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <color key="backgroundColor" red="0.9332616925239563" green="0.93337357044219971" blue="0.9332236647605896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="fgi-Pi-luF">
+                                    <size key="itemSize" width="165" height="195"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="OuT-cu-umN" id="Ak0-gi-f5n"/>
+                                    <outlet property="delegate" destination="OuT-cu-umN" id="h82-A4-O6O"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Wfc-zz-Pum" firstAttribute="top" secondItem="8Bg-EW-she" secondAttribute="bottom" id="BDd-Lo-GsE"/>
+                            <constraint firstItem="aAb-cP-N57" firstAttribute="top" secondItem="Wfc-zz-Pum" secondAttribute="bottom" id="Cd8-bD-U1A"/>
+                            <constraint firstAttribute="trailing" secondItem="8Bg-EW-she" secondAttribute="trailing" id="I5F-mU-KUg"/>
+                            <constraint firstItem="8Bg-EW-she" firstAttribute="top" secondItem="ajM-Wk-JjC" secondAttribute="top" id="N4J-CY-7MO"/>
+                            <constraint firstItem="8Bg-EW-she" firstAttribute="trailing" secondItem="Wfc-zz-Pum" secondAttribute="trailing" id="U2E-Rd-la2"/>
+                            <constraint firstItem="aAb-cP-N57" firstAttribute="trailing" secondItem="azD-Ni-Taa" secondAttribute="trailing" id="Uqj-9v-XVq"/>
+                            <constraint firstItem="8Bg-EW-she" firstAttribute="leading" secondItem="ajM-Wk-JjC" secondAttribute="leading" id="clZ-Sc-KWe"/>
+                            <constraint firstItem="8Bg-EW-she" firstAttribute="leading" secondItem="Wfc-zz-Pum" secondAttribute="leading" id="icn-s8-GND"/>
+                            <constraint firstAttribute="bottom" secondItem="aAb-cP-N57" secondAttribute="bottom" id="mNl-bB-WPP"/>
+                            <constraint firstItem="Wfc-zz-Pum" firstAttribute="height" secondItem="ajM-Wk-JjC" secondAttribute="height" multiplier="0.07" id="w2M-ae-bOw"/>
+                            <constraint firstItem="aAb-cP-N57" firstAttribute="height" secondItem="ajM-Wk-JjC" secondAttribute="height" multiplier="0.3" id="xEI-DJ-lZG"/>
+                            <constraint firstItem="aAb-cP-N57" firstAttribute="leading" secondItem="azD-Ni-Taa" secondAttribute="leading" id="xgv-Ye-PyZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="azD-Ni-Taa"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomInfoConstraint" destination="mNl-bB-WPP" id="Htt-gV-m59"/>
+                        <outlet property="btnShow" destination="uRX-45-QAV" id="NkM-1L-M7X"/>
+                        <outlet property="collectionView" destination="aAb-cP-N57" id="PoS-9O-Ghe"/>
+                        <outlet property="gmaps" destination="8Bg-EW-she" id="u2C-oo-oTu"/>
+                        <outlet property="heightInfoConstraint" destination="xEI-DJ-lZG" id="fe8-Pa-cjM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pMb-7D-wMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4104.8000000000002" y="384.23645320197045"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic-show" width="20" height="13"/>
+    </resources>
+</document>
